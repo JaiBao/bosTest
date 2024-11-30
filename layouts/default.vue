@@ -1,7 +1,14 @@
 <!-- layouts/default.vue -->
 <template>
   <q-layout view="hHh LpR fff">
-    <q-header elevated style="padding: 1% 0" class="toolbar">
+    <q-header
+      elevated
+      :class="{
+        'header-visible': isHeaderVisible || !isIndexPage,
+        'header-hidden': !isHeaderVisible && isIndexPage
+      }"
+      style="padding: 1% 0"
+      class="toolbar">
       <q-toolbar class="row justify-between p-0-5 w-100">
         <div class="pointer headLogo" @click="navigateToHome"><img src="https://foodhub-nuxt.vercel.app/_nuxt/img/logo.4a3964e.png" /></div>
 
@@ -161,7 +168,12 @@
 import { useCartStore } from '@/stores/cartStore'
 
 const cartStore = useCartStore()
+const route = useRoute()
+const router = useRouter()
 const cartDialogOpen = ref(false)
+const isHeaderVisible = ref(false)
+const isIndexPage = computed(() => route.path === '/')
+const section1Height = ref(0)
 
 const toggleCartDialog = () => {
   cartDialogOpen.value = !cartDialogOpen.value
@@ -176,7 +188,6 @@ const clearCart = () => {
 }
 const rightDrawerOpen = ref(false)
 
-const router = useRouter()
 const toggleRightDrawer = () => {
   rightDrawerOpen.value = !rightDrawerOpen.value
 }
@@ -185,7 +196,6 @@ const navigateToHome = () => {
   router.push('/')
 }
 
-// 定義地點數據
 const locations = [
   { name: 'Newport', places: 26 },
   { name: 'Newport', places: 26 },
@@ -209,6 +219,25 @@ const locations = [
   { name: 'Coney Island', places: 6 },
   { name: 'Coney Island', places: 6 }
 ]
+
+// 滾動
+const handleScroll = () => {
+  if (!process.client || !isIndexPage.value) return
+  isHeaderVisible.value = window.scrollY > section1Height.value
+}
+
+onMounted(() => {
+  if (process.client && isIndexPage.value) {
+    section1Height.value = document.querySelector('.section1')?.offsetHeight || 0
+    window.addEventListener('scroll', handleScroll)
+  }
+})
+
+onUnmounted(() => {
+  if (process.client && isIndexPage.value) {
+    window.removeEventListener('scroll', handleScroll)
+  }
+})
 </script>
 <style lang="scss" scoped>
 @import 'assets/default.scss';

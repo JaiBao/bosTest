@@ -1,0 +1,42 @@
+.section1 {
+  display: flex;
+  gap: 20px;
+  padding: 16px;
+
+  .filters {
+    display: flex;
+    gap: 20px;
+
+    .filter-section {
+      width: 250px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+
+      h4 {
+        margin-bottom: 16px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .checkbox-group {
+        margin-bottom: 16px;
+
+        .q-checkbox {
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    .products {
+      flex: 1;
+
+      h4 {
+        margin-bottom: 16px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+}

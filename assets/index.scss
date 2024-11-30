@@ -1,0 +1,101 @@
+.section1,
+.section2,
+.section3,
+.section4,
+.section5,
+.section6 {
+  margin-bottom: 3%;
+}
+
+.section1 {
+  height: 500px;
+  background-image: url(https://foodhub-nuxt.vercel.app/_nuxt/img/header-bg.d39c465.png);
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h6 {
+    margin-top: 0;
+    color: white;
+  }
+  p {
+    color: white;
+  }
+
+  .searchBar {
+    .location {
+      width: 33%;
+    }
+    .search {
+      width: 40%;
+    }
+    .searchbtn {
+      flex: 1;
+    }
+  }
+}
+
+.section2 {
+  padding: 0 5%;
+}
+.section3 {
+  padding: 0 5%;
+  .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    h6 {
+      font-size: 25px;
+      padding: 0;
+      margin: 0;
+    }
+    p {
+      margin: 0;
+    }
+    .right {
+      color: #d23f57;
+    }
+  }
+}
+.section4 {
+  padding: 0 5%;
+}
+
+.section5 {
+  padding: 0 5%;
+}
+
+.section6 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    h6 {
+      margin: 0;
+      font-size: 40px;
+    }
+    p {
+      color: #757575;
+    }
+    .searchinput {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      .emailinput {
+        width: 80%;
+      }
+    }
+    .googleIos {
+      img {
+        gap: 10px;
+      }
+    }
+  }
+}

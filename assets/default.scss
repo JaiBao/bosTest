@@ -1,0 +1,201 @@
+.greyLine {
+  border-radius: 999px;
+  background: linear-gradient(90deg, #444 0%, rgba(255, 244, 244, 0) 100%);
+  align-self: start;
+  display: flex;
+  margin: 9px 0;
+  width: 86px;
+  height: 1px;
+  flex-direction: column;
+}
+
+.searchBar {
+  flex: 1;
+  .location {
+    width: 33%;
+  }
+  .search {
+    width: 60%;
+  }
+}
+
+.footerToolbar {
+  padding: 3%;
+  .footerFirst {
+    display: flex;
+    flex-direction: column;
+    .content {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px;
+      p {
+        flex: 1 1 calc(50% - 10px);
+        margin: 0;
+        box-sizing: border-box;
+        text-align: left;
+        span {
+          color: grey;
+        }
+      }
+    }
+  }
+
+  .footertwice {
+    margin-top: 3%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .footertwiceLeft {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .logos {
+        .logo {
+          width: 58px;
+          height: 58px;
+        }
+
+        .googleIos {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          img {
+            width: 10%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+
+    .footertwiceRight {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .customs {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        h6 {
+          margin-top: 0;
+        }
+      }
+      .about {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        h6 {
+          margin-top: 0;
+        }
+      }
+      .contack {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        h6 {
+          margin-top: 0;
+        }
+      }
+      .contack {
+        .contacks {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          img {
+            width: 35px;
+            height: 35px;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    padding: 0 5%;
+    .footerFirst {
+      flex-direction: column;
+      .content {
+        p {
+          flex: 1 1 calc(25% - 10px);
+        }
+      }
+    }
+    .footertwice {
+      flex-direction: row;
+      .footertwiceLeft {
+        display: flex;
+        flex-direction: column;
+        width: 23%;
+        .logos {
+          .logo {
+            width: 58px;
+            height: 58px;
+          }
+
+          .googleIos {
+            display: flex;
+            flex-direction: row;
+            img {
+              width: 30%;
+            }
+          }
+        }
+      }
+      .footertwiceRight {
+        width: 74%;
+        flex-direction: row;
+        justify-content: space-around;
+        .customs {
+          display: flex;
+          flex-direction: column;
+          width: 32%;
+          h6 {
+            margin-top: 0;
+          }
+        }
+        .about {
+          display: flex;
+          flex-direction: column;
+          width: 32%;
+          h6 {
+            margin-top: 0;
+          }
+        }
+        .contack {
+          display: flex;
+          flex-direction: column;
+          width: 32%;
+          h6 {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cartBtn {
+  position: fixed;
+  right: 3%;
+  top: 10%;
+  z-index: 999;
+  background: #f7b52c;
+
+  opacity: 0.8;
+}
+
+.headLogo {
+  img {
+    object-fit: contain;
+    height: 48px;
+    width: 48px;
+  }
+}
+
+.toolbar {
+  // background: url('https://foodhub-nuxt.vercel.app/_nuxt/img/header-bg.d39c465.png') no-repeat center / cover;
+  opacity: 0.8;
+  background: white;
+}

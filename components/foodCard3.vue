@@ -1,0 +1,62 @@
+<template>
+  <div class="avatars q-gutter-md flex flex-wrap justify-between">
+    <div v-for="(card, index) in cards" :key="index" class="avatar q-ma-md pointer column items-center justify-cneter" bordered>
+      <!-- 圖片 -->
+      <q-avatar size="150px">
+        <img :src="card.image" :alt="card.altText" class="q-mb-md" />
+      </q-avatar>
+
+      <!-- 卡片內容 -->
+      <q-card-section>
+        <div class="text-h6">{{ card.title }}</div>
+      </q-card-section>
+    </div>
+  </div>
+</template>
+
+<script setup>
+const cards = [
+  {
+    image: 'https://via.placeholder.com/400',
+    altText: '圖片1',
+    title: '卡片標題1'
+  },
+  {
+    image: 'https://via.placeholder.com/400',
+    altText: '圖片2',
+    title: '卡片標題2'
+  },
+  {
+    image: 'https://via.placeholder.com/400',
+    altText: '圖片3',
+    title: '卡片標題3'
+  },
+  {
+    image: 'https://via.placeholder.com/400',
+    altText: '圖片4',
+    title: '卡片標題4'
+  },
+  {
+    image: 'https://via.placeholder.com/400',
+    altText: '圖片1',
+    title: '卡片標題1'
+  },
+  {
+    image: 'https://via.placeholder.com/400',
+    altText: '圖片2',
+    title: '卡片標題2'
+  }
+]
+</script>
+
+<style scoped lang="scss">
+.q-card {
+  max-width: 350px;
+}
+.avatars {
+  padding: 0 5%;
+  .avatar {
+    padding: 5%;
+  }
+}
+</style>

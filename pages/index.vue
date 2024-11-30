@@ -10,6 +10,11 @@
             <q-icon name="place" />
           </template>
         </q-input>
+        <q-input outlined label="Locat me" readonly class="recenter" bg-color="white">
+          <template v-slot:prepend>
+            <q-icon name="my_location" />
+          </template>
+        </q-input>
         <q-input outlined label="search for resturant" class="search" bg-color="white">
           <template v-slot:append>
             <q-icon name="search" />

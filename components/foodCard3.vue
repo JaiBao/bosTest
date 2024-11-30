@@ -2,7 +2,7 @@
   <div class="avatars q-gutter-md flex flex-wrap justify-between">
     <div v-for="(card, index) in cards" :key="index" class="avatar q-ma-md pointer column items-center justify-cneter" bordered>
       <!-- 圖片 -->
-      <q-avatar size="150px">
+      <q-avatar class="img">
         <img :src="card.image" :alt="card.altText" class="q-mb-md" />
       </q-avatar>
 
@@ -51,12 +51,41 @@ const cards = [
 
 <style scoped lang="scss">
 .q-card {
-  max-width: 350px;
+  width: 100%;
+
+  @media (min-width: 576px) {
+    width: 45%;
+  }
+  @media (min-width: 1024px) {
+    max-width: 30%;
+  }
 }
 .avatars {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 0 5%;
   .avatar {
     padding: 5%;
+    .img {
+      width: 100%;
+      height: 300px;
+      object-fit: contain;
+    }
+  }
+  @media (min-width: 576px) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .avatar {
+      padding: 5%;
+      .img {
+        width: 100%;
+        height: 150px;
+        object-fit: contain;
+      }
+    }
   }
 }
 </style>

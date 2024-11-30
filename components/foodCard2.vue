@@ -40,9 +40,15 @@ const cards = [
 
 <style scoped>
 .q-card {
-  max-width: 30%;
+  width: 100%;
   position: relative;
   overflow: hidden;
+  @media (min-width: 576px) {
+    width: 45%;
+  }
+  @media (min-width: 1024px) {
+    max-width: 30%;
+  }
 }
 
 .image-wrapper {

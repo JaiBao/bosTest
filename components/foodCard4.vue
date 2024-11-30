@@ -106,10 +106,17 @@ const cards = [
 
 <style scoped>
 .q-card {
-  width: 30%;
+  width: 100%;
   overflow: hidden;
   position: relative;
   gap: 2%;
+
+  @media (min-width: 576px) {
+    width: 45%;
+  }
+  @media (min-width: 1024px) {
+    max-width: 30%;
+  }
 }
 
 .discount-tag {
